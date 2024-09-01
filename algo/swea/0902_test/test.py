@@ -36,33 +36,68 @@ sys.stdin = open('input.txt')
 #     print(f'#{tc} {max_value}')
 
 
+#
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     arr = list(str(input())) # 10101
+#     # print(arr)
+#
+#
+#     max_value = 1       # 가장 긴 데칼코마니 길이 변수를 초기화
+#
+#     for center in range(N):
+#          left = center - 1      # 왼쪽 값 변수 설정
+#          right = center + 1     # 오른쪽 값 변수 설정
+#          current_len = 1        # 현재 길이 1 변수 초기화
+#
+#          # 데칼코마니가 안나올 때까지 돌려, 근데 왼,오 인덱스 조정해줘야대
+#
+#          while 0 <= left and right < N and arr[left] == arr[right]:
+#              current_len += 2
+#              left -= 1
+#              right += 1
+#
+#
+#          if max_value < current_len:
+#              max_value = current_len
+#
+#     print(max_value)
+# #
+
 
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
-    arr = list(str(input())) # 10101
+    arr = list(input())
     # print(arr)
 
-
-    max_value = 1       # 가장 긴 데칼코마니 길이 변수를 초기화
+    max_value = 0
 
     for center in range(N):
-         left = center - 1      # 왼쪽 값 변수 설정
-         right = center + 1     # 오른쪽 값 변수 설정
-         current_len = 1        # 현재 길이 1 변수 초기화
+        left = center -1
+        right = center +1
+        current_len = 1
 
-         # 데칼코마니가 안나올 때까지 돌려, 근데 왼,오 인덱스 조정해줘야대
-
-         while 0 <= left and right < N and arr[left] == arr[right]:
-             current_len += 2
-             left -= 1
-             right += 1
+        while 0 <= left and right < N and arr[left] == arr[right]:
+            current_len += 2
+            left -= 1
+            right += 1
 
 
-         if max_value < current_len:
-             max_value = current_len
+        if max_value < current_len:
+            max_value = current_len
 
-    print(max_value)
+    print(f'#{tc} {max_value}')
+
+
+
+
+
+
+
+
+
 
 
 
