@@ -15,12 +15,20 @@ for tc in range(1, T+1):
 
     if M1 < M2:
         M1_li.append(arr[-M1])
+        arr.pop(-M1)
         M2_li.append(arr[-1])
+        arr.pop(-1)
+        M1_li.append(arr[-1])
+        arr.pop(-1)
+        # M2_li.append(arr[])
+
 
     elif M1 > M2:
-        M1_li.append(arr[-M1])
-        M2_li.append(arr[-1])
+        M1_li.append(arr[-2])
+        arr.pop(-2)
+        M2_li.append(arr[-M2])
+        arr.pop(-M2)
 
-
+    print(arr)
     print(M1_li)
     print(M2_li)
