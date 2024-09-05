@@ -1,3 +1,5 @@
+# 4836. [파이썬 S/W 문제해결 기본] 2일차 - 색칠하기
+
 import sys
 sys.stdin = open('input.txt')
 
