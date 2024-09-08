@@ -6,29 +6,19 @@ for tc in range(1, T+1):
     N, M1, M2 = map(int,input().split())
     arr = list(map(int,input().split()))
 
-    arr.sort()
+    arr.sort(reverse=True)
 
-    print(arr)
+    M_1 = [i for i in range(1, M1+1)]
+    M_2 = [i for i in range(1, M2 + 1)]
+    M_s = M_1 + M_2
 
-    M1_li = []  # 블록개수적은리스트
-    M2_li = []  # 블록개수많은리스트
+    M_s.sort()
 
-    if M1 < M2:
-        M1_li.append(arr[-M1])
-        arr.pop(-M1)
-        M2_li.append(arr[-1])
-        arr.pop(-1)
-        M1_li.append(arr[-1])
-        arr.pop(-1)
-        # M2_li.append(arr[])
+    result = 0
+    for i in range(N):
+        result += M_s[i]*arr[i]
+
+    print(f'#{tc} {result}')
 
 
-    elif M1 > M2:
-        M1_li.append(arr[-2])
-        arr.pop(-2)
-        M2_li.append(arr[-M2])
-        arr.pop(-M2)
 
-    print(arr)
-    print(M1_li)
-    print(M2_li)
