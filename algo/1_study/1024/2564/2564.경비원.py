@@ -26,4 +26,3 @@ def short_distance():
         pass
 
 
-
