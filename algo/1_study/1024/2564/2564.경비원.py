@@ -23,6 +23,7 @@ def short_distance():
         return result
 
     elif dong_current != store_current:
+        pass
 
 
 
