@@ -9,8 +9,30 @@ B, C = map(int,input().split()) # 총감독관 감시할 수 있는 응시자수
 
 # 총감독관은 반드시 1명 필요
 
-# print(Ai)
-result = 1
+# # print(Ai)
+# cnt = N
 
+# for i in N:
+#     temp = (Ai - B)
+#     if temp > 0:
+#         if temp <= C :
+#             if temp%C == 0 or 0 < temp%C < temp:
 
+#                 cnt += 1
+            
+        
+#     result.append(cnt)
 
+    
+# print(result)
+
+cnt = N 
+for i in Ai:
+    i -= B
+    if i > 0:
+        if i % C:
+            cnt += (i//C) +1
+        else:
+            cnt += i//C
+
+print(cnt)
