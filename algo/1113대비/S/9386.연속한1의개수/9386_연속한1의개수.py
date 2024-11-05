@@ -6,15 +6,15 @@ sys.stdin = open('input.txt')
 #     N = int(input())
 #     arr = list(map(int,input()))
 #
-#     cnt = 0
+#     cnt = 0     # 1을 카운트할 변수
 #     for i in range(len(arr)):
-#         if arr[i] == 1:
-#             cnt += 1
+#         if arr[i] == 1:     # 만약 인덱스 값이 1이면
+#             cnt += 1    # cnt 변수에 1을 추가한다.
 #
-#         elif arr[i] == 0:
-#             continue
+#         elif arr[i] == 0:   # 만약 인덱스 값이 0이라면
+#             continue    # 넘어간다.
 #
-#     # print(f'#{tc}', max(cnt_li))
+#     print(f'#{tc}', cnt)
 
 '''
 이렇게 짜니까 뒤에 0이 나와도 1이 계속 더해진다. 
@@ -26,27 +26,27 @@ sys.stdin = open('input.txt')
 '''
 
 
-# T = int(input())
-# for tc in range(1, T+1):
-#     N = int(input())
-#     arr = list(map(int,input()))
-#
-#     # print(arr)
-#     cnt_li = [] #cnt 한 값들을 넣어줄 빈 리스트
-#     cnt = 0
-#
-#     for i in range(len(arr)):
-#
-#         if arr[i] == 1:
-#             cnt += 1
-#             cnt_li.append(cnt)
-#             if arr[i+1] == 0: # 만약 다음 인덱스 값이 0이 나오면
-#                 cnt = 0 # 카운트 값을 초기화 시킨다.
-#
-#         elif arr[i] == 0:
-#             continue
-#
-#     print(f'#{tc}', max(cnt_li))
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    arr = list(map(int,input()))
+
+    # print(arr)
+    cnt_li = []     # cnt 한 값들을 넣어줄 빈 리스트
+    cnt = 0
+
+    for i in range(len(arr)):
+
+        if arr[i] == 1:     # 만약 인덱스 값이 1이면
+            cnt += 1    # cnt 변수에 1을 증가시키고
+            cnt_li.append(cnt)  # 그 값을 cnt_li에 넣는다.
+            if arr[i+1] == 0:   # 만약 다음 인덱스 값이 0이 나오면
+                cnt = 0     # 카운트 값을 초기화 시킨다.
+
+        elif arr[i] == 0:
+            continue
+
+    print(f'#{tc}', max(cnt_li))
 
 '''
 이렇게 하고 출력하니까 인덱스 에러가 났다.
@@ -68,7 +68,6 @@ for tc in range(1, T+1):
     N = int(input())
     arr = list(map(int,input()))
 
-    # print(arr)
     cnt_li = []
     cnt = 0
     for i in range(len(arr)):
@@ -76,7 +75,7 @@ for tc in range(1, T+1):
         if arr[i] == 1:
             cnt += 1
             cnt_li.append(cnt)
-            if i+1 < N:
+            if i+1 < N: # 조건 추가
                 if arr[i+1] == 0:
                     cnt = 0
 
