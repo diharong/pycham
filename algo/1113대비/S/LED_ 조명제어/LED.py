@@ -6,7 +6,6 @@ for tc in range(1, T+1):
     N = int(input())
     arr = list(map(int,input().split()))
 
-
     start = [ 0 for _ in range(N)]  # 초기의 빈 배열 만들기
 
     if start == arr:    # 만약, 시작 값과 출력값이 같으면 종료한다.

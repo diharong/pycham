@@ -16,7 +16,7 @@ for tc in range(1, T+1):
             S = arr[i][j]
 
             for k in range(4):  # 4방향 탐색
-                for z in range(1, arr[i][j]+1): # 왜 0부터 아님,,?
+                for z in range(1, arr[i][j]+1):     # 왜 0부터 아님,,?
                     # 자기자신을 더하지 않기 위해서
                     nx = i + dx[k]*z
                     ny = j + dy[k]*z
