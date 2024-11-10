@@ -1,25 +1,33 @@
 import sys
 sys.stdin = open('input.txt')
 
-# T = int(input())
-# for tc in range(1, T+1):
-#     N, K = map(int,input().split()) # N x N, K = 단어길이
-#     arr = [list(map(int,input().split())) for _ in range(N)]
-#
-#     result = 0
-#     for i in range(N):
-#         for j in range(N-K+1):
-#             if arr[i][j:j+K] == [1]*K:
-#                 if (j==0 or arr[i][j-1] == 0) and (j+K == N or arr[i][j+K] == 0):
-#                     result += 1
-#
-#     for j in range(N):
-#         for i in range(N-K+1):
-#             if all(arr[i+x][j]==1 for x in range(K)):
-#                 if (i==0 or arr[i-1][j]==0) and (i+K==N or arr[i+K][j]==0):
-#                     result += 1
-#
-#     print(result)
+
+T = int(input())
+for tc in range(1, T+1):
+    N, K = map(int,input().split())     # N x N, K = 단어길이
+    arr = [list(map(int,input().split())) for _ in range(N)]
+
+    result = 0  # K 길이의 배열 개수
+
+    # 행 순회
+    for i in range(N):
+        for j in range(N-K+1):
+            if arr[i][j:j+K] == [1]*K:  # 만약 [1,1,1] 과 같은 모양을 만났을 때
+                # 조건 확인
+                # (배열의 가장 처음 이거나 이전 인덱스 값이 0일 경우) 그리고 ( 가장 마지막 열의 값이거나 다음 인덱스 값이 0일 경우)
+                if (j == 0 or arr[i][j-1] == 0) and (j+K == N or arr[i][j+K] == 0):
+                    result += 1     # K=3 인 배열을 발견했다고 판단하여 result 값에 1을 추가한다.
+
+    # 열 순회
+    for j in range(N):
+        for i in range(N-K+1):
+            # 위의 K 배열을 열 순회로 뒤집어야 하므로 (zip 함수 이용해도 됨)
+            if all(arr[i+x][j] == 1 for x in range(K)):
+                # 행 순회 시와 같은 조건
+                if (i == 0 or arr[i-1][j] == 0) and (i+K == N or arr[i+K][j] == 0):
+                    result += 1
+
+    print(f'#{tc}', result)
 #
 #
 
