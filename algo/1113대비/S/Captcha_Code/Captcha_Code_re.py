@@ -7,12 +7,10 @@ for tc in range(1, T+1):
     sample = list(map(int,input().split()))
     passcode = list(map(int,input().split()))
 
-    check = []
-    start = 0
-    for i in range(K):
-        for j in range(N):
-            if sample[j] == passcode[i]:
-                check.append(passcode[i])
+
+    check_point = 0
+
+    for num in passcode:
+        if num in sample[check_point:]:
 
 
-    print(check)
