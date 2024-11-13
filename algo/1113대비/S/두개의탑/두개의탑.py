@@ -10,5 +10,7 @@ for tc in range(1, T+1):
     # print(weight)
 
     weight.sort()
+    M1_lst = []
+    M2_lst = []
 
     print(weight)
